@@ -45,12 +45,32 @@ namespace Assignment10
 
       private void button2_Click(object sender, EventArgs e)
       {
+         Oracle.myTable.Clear();
+
+         string field = comboBox1.Text;
+         string op = comboBox2.Text;
+         string value = textBox1.Text;
+
+         //Oracle.bookingCommand.CommandText = "Select * from booking where " + field + op + "'" + value + "'";
+
+         
+
 
       }
 
       private void button3_Click(object sender, EventArgs e)
       {
-
+         Oracle.bookingCommand.CommandText = "SELECT * FROM BOOKING";
+         try
+         {
+            Oracle.myTable.Clear();
+            Oracle.bookingAdapter.Fill(Oracle.myTable);
+         }
+         catch(Exception ex)
+         {
+            MessageBox.Show(ex.Message);
+         }
+         
       }
 
       private void button4_Click(object sender, EventArgs e)

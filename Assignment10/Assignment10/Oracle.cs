@@ -58,9 +58,9 @@ namespace Assignment10
                   LogInAtRunTime();
                   connected = true;
                }
-               catch
+               catch(System.Exception ex)
                {
-                  System.Windows.Forms.MessageBox.Show("wrong");
+                  System.Windows.Forms.MessageBox.Show(ex.Message);
                }
          }
          if (connected)

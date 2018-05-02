@@ -92,6 +92,12 @@
          // comboBox1
          // 
          this.comboBox1.FormattingEnabled = true;
+         this.comboBox1.Items.AddRange(new object[] {
+            "HOTEL_NO",
+            "GUEST_NO",
+            "DATE_FROM",
+            "DATE_TO",
+            "ROOM_NO"});
          this.comboBox1.Location = new System.Drawing.Point(58, 350);
          this.comboBox1.Name = "comboBox1";
          this.comboBox1.Size = new System.Drawing.Size(121, 21);
@@ -101,6 +107,12 @@
          // comboBox2
          // 
          this.comboBox2.FormattingEnabled = true;
+         this.comboBox2.Items.AddRange(new object[] {
+            "=",
+            ">",
+            ">=",
+            "<",
+            "<="});
          this.comboBox2.Location = new System.Drawing.Point(310, 350);
          this.comboBox2.Name = "comboBox2";
          this.comboBox2.Size = new System.Drawing.Size(121, 21);
