@@ -19,6 +19,7 @@ namespace Assignment10
 
       private void FormClassBooking_Load(object sender, EventArgs e)
       {
+         dataGridView1.DataSource = Oracle.myTable;
 
       }
 
@@ -27,9 +28,19 @@ namespace Assignment10
 
       }
 
+
+      // Update
       private void button1_Click(object sender, EventArgs e)
       {
+         try
+         {
+            dataGridView1.EndEdit();
+            Oracle.bookingAdapter.Update(Oracle.myTable);
+         }
+         catch 
+         {
 
+         }
       }
 
       private void button2_Click(object sender, EventArgs e)
