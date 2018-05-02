@@ -52,7 +52,7 @@
          this.txtBoxHost.Location = new System.Drawing.Point(337, 200);
          this.txtBoxHost.Name = "txtBoxHost";
          this.txtBoxHost.Size = new System.Drawing.Size(100, 20);
-         this.txtBoxHost.TabIndex = 1;
+         this.txtBoxHost.TabIndex = 2;
          // 
          // txtBoxPassword
          // 
@@ -60,7 +60,7 @@
          this.txtBoxPassword.Name = "txtBoxPassword";
          this.txtBoxPassword.PasswordChar = '*';
          this.txtBoxPassword.Size = new System.Drawing.Size(100, 20);
-         this.txtBoxPassword.TabIndex = 2;
+         this.txtBoxPassword.TabIndex = 1;
          // 
          // btnLogin
          // 
