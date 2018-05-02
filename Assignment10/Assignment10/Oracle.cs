@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Data.OracleClient;
 using System.Threading.Tasks;
+using System.Data;
 
 namespace Assignment10
 {
@@ -16,9 +18,29 @@ namespace Assignment10
       internal static string Server;
       internal static ResponseType Result;
 
+      internal static OracleConnection OC = new OracleConnection();
+      internal static OracleDataAdapter bookingAdapter = new OracleDataAdapter();
+      internal static OracleCommand bookingCommand = new OracleCommand();
+      internal static OracleCommandBuilder bookingCommandBuilder = new OracleCommandBuilder();
+
+      internal static DataTable myTable = new DataTable();
+
       public static void LogInAtRunTime()
       {
+         // For testing
+         //UserName = "yangq";
+         //PassWd = "cs3630";
+         //Server = "EDDB";
 
+         OC.ConnectionString = "Data Source = " + Server + ";Persist Security Info=True;User ID=" + UserName + ";Password=" + PassWd + ";Unicode=True";
+
+         bookingCommand.CommandType = CommandType.Text;
+         bookingCommand.CommandText = "Select * from booking";
+         bookingCommand.Connection = OC;
+
+         bookingAdapter.SelectCommand = bookingCommand;
+         bookingCommandBuilder = new OracleCommandBuilder(bookingAdapter);
+         bookingAdapter.Fill(myTable);
       }
 
       public static void Main()
@@ -28,7 +50,7 @@ namespace Assignment10
          while (!connected)
          {
             login.ShowDialog();
-            if (login.DialogResult == System.Windows.Forms.DialogResult.Cancel)
+            if (Result == ResponseType.Cancel)
                break;
             else
                try
@@ -38,8 +60,11 @@ namespace Assignment10
                }
                catch
                {
+                  System.Windows.Forms.MessageBox.Show("wrong");
                }
          }
+         if (connected)
+            System.Windows.Forms.Application.Run(new FormClassBooking());
       }
 
    }

@@ -56,7 +56,6 @@
          // 
          // txtBoxPassword
          // 
-         this.txtBoxPassword.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
          this.txtBoxPassword.Location = new System.Drawing.Point(337, 138);
          this.txtBoxPassword.Name = "txtBoxPassword";
          this.txtBoxPassword.PasswordChar = '*';
@@ -65,23 +64,23 @@
          // 
          // btnLogin
          // 
-         this.btnLogin.DialogResult = System.Windows.Forms.DialogResult.OK;
          this.btnLogin.Location = new System.Drawing.Point(152, 293);
          this.btnLogin.Name = "btnLogin";
          this.btnLogin.Size = new System.Drawing.Size(75, 23);
          this.btnLogin.TabIndex = 3;
          this.btnLogin.Text = "Login";
          this.btnLogin.UseVisualStyleBackColor = true;
+         this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
          // 
          // btnCancel
          // 
-         this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
          this.btnCancel.Location = new System.Drawing.Point(520, 293);
          this.btnCancel.Name = "btnCancel";
          this.btnCancel.Size = new System.Drawing.Size(75, 23);
          this.btnCancel.TabIndex = 4;
          this.btnCancel.Text = "Cancel";
          this.btnCancel.UseVisualStyleBackColor = true;
+         this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
          // 
          // label1
          // 
@@ -117,7 +116,6 @@
          this.AcceptButton = this.btnLogin;
          this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-         this.CancelButton = this.btnCancel;
          this.ClientSize = new System.Drawing.Size(825, 393);
          this.Controls.Add(this.label3);
          this.Controls.Add(this.label2);

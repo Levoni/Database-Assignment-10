@@ -26,5 +26,21 @@ namespace Assignment10
       {
 
       }
+
+      private void btnLogin_Click(object sender, EventArgs e)
+      {
+         Oracle.UserName = txtBoxUsername.Text;
+         Oracle.PassWd = txtBoxPassword.Text;
+         Oracle.Server = txtBoxHost.Text;
+
+         Oracle.Result = Oracle.ResponseType.OK;
+         this.Close();
+      }
+
+      private void btnCancel_Click(object sender, EventArgs e)
+      {
+         Oracle.Result = Oracle.ResponseType.Cancel;
+         this.Close();
+      }
    }
 }
